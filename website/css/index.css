@@ -1,0 +1,115 @@
+.theme {
+  color: #6cb4e4;
+  text-align: center;
+  padding: 0.25em;
+  border-top: solid 2px #6cb4e4;
+  border-bottom: solid 2px #6cb4e4;
+  background: -webkit-repeating-linear-gradient(
+    -45deg,
+    #f0f8ff,
+    #f0f8ff 3px,
+    #e9f4ff 3px,
+    #e9f4ff 7px
+  );
+  background: repeating-linear-gradient(
+    -45deg,
+    #f0f8ff,
+    #f0f8ff 3px,
+    #e9f4ff 3px,
+    #e9f4ff 7px
+  );
+
+  font-size: 30px;
+}
+
+.theme,
+.i {
+  font-family: "Stick", sans-serif;
+}
+
+/* 目次スタイル */
+ul,
+ol {
+  background: #fffde8;
+  box-shadow: 0px 0px 0px 10px #fffde8; /*線の外側*/
+  border: dashed 2px #ffb03f; /*破線*/
+  border-radius: 9px;
+  margin-left: 10px; /*はみ出ないように調整*/
+  margin-right: 10px; /*はみ出ないように調整*/
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+
+ul li,
+ol li {
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+
+ul {
+  border: solid 2px #ffb03f;
+  padding: 0.5em 1em 0.5em 2.3em;
+  position: relative;
+  list-style-type: none !important; /*ポチ消す*/
+}
+
+/* 目次の下線消す */
+a {
+  text-decoration: none;
+}
+
+/* 見出し */
+h2:first-letter {
+  font-size: 1.5em;
+  color: palevioletred;
+}
+
+/* ツールチップ */
+.tooltip {
+  /* background-color: #f9c; */
+  border-radius: 6px;
+  padding: 10px 15px;
+  position: relative;
+  margin: 15px;
+  display: block;
+  margin-left: 35%;
+  margin-right: 35%;
+  text-align: center;
+}
+.tooltip::after {
+  background-color: #333;
+  border-radius: 6px;
+  color: #fff;
+  display: none;
+  padding: 10px 15px;
+  position: absolute;
+  text-align: center;
+  z-index: 999;
+}
+.tooltip::before {
+  background-color: #333;
+  content: " ";
+  display: none;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  z-index: 999;
+}
+.tooltip:hover::after {
+  display: block;
+}
+.tooltip:hover::before {
+  display: block;
+}
+.tooltip.top::after {
+  content: "ターミナル";
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, calc(-100% - 10px));
+  transform: translate(-50%, calc(-100% - 10px));
+}
+.tooltip.top::before {
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);
+  transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);
+}
